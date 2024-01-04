@@ -84,11 +84,11 @@ let ViewPageModule = (function () {
     function getDates(startDate, endDate) {
 		    let dateArray = [];
 		    let currentDate = new Date(startDate);
-		    
+
 		    while (currentDate <= endDate) {
 		        dateArray.push(new Date(currentDate));
 		        currentDate.setDate(currentDate.getDate() + 1);
-		        
+
 		    }
 			
 		    return dateArray;
@@ -119,8 +119,8 @@ let ViewPageModule = (function () {
         let h2Element = $("<h2>").text(cityname);
         firstChildDiv.append(h2Element);
 		
-		
         let dateDiv = $("<div>").attr("id", "date").text(startDate+getDay( new Date(startDate).getDay()) + " ~ " + endDate+getDay(new Date(endDate).getDay()) ).append(
+
             $("<div>").attr("id", "frame-calendar-button").append(
                 $("<button>").attr(
                     {
@@ -201,6 +201,7 @@ let ViewPageModule = (function () {
 		    return formattedDate;
 		});
 		
+
 		
 		// 시간을 두 자리로 포맷팅하는 함수
 		function formatTime(time) {
@@ -630,5 +631,6 @@ let ViewPageModule = (function () {
         step1Loding : step1Loding,
         getDates : getDates,
         getDay : getDay
+
     };
 })();
